@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Simple Airbnb</a>
+  <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="banner-container" style="position: relative" >
+  <%= image_tag("apartment.jpg", class: "img-fluid banner-image", style: "height: 300px; width: 100%; object-fit: cover;") %>
+  <div class="card banner-card" style="position: relative; top: 50%; left: 30%; transform: translate(-50%, -50%); width: 50%;">
+    <div class="card-body">
+      <h3 class="card-title"><%= @flat.name %></h3>
+      <p class="card-text"><%= @flat.address %></p>
+    </div>
+  </div>
+  <div class="card-header p-3 mt-3" style="position: relative; top: 50%; left: 30%; transform: translate(-50%, -50%); width: 50%;">
+    <h5>A bit more about this flat</h5>
+    <p>Detailed info about the flats</p>
+  </div>
+  <div class="card-header p-3 mt-3" style="position: relative; top: 50%; left: 30%; transform: translate(-50%, -50%); width: 50%;">
+    <h5>Details</h5>
+    <i class="fa-solid fa-people-line"><%= @flat.number_of_guests %></i>
+    <i class="ml-4 fa-solid fa-euro-sign"><%= @flat.price_per_night %></i>
+  </div>
+</div>
