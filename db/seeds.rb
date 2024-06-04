@@ -19,3 +19,13 @@ puts "creating 4 flats..."
     number_of_guests: 3
   )
 end
+
+4.times do
+  Flat.create!(
+    name: 'Chic and classic loft in Paris',
+    address: '75001 Paris, France',
+    description: 'A comfortable place to stay, chic, and near Musée du Louvre',
+    price_per_night: 80,
+    number_of_guests: 2
+  )
+end

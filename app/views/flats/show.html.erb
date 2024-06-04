@@ -1,26 +1,53 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Simple Airbnb</a>
-  <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-<div class="banner-container" style="position: relative" >
+<div class="banner-container" style="position: relative;">
   <%= image_tag("apartment.jpg", class: "img-fluid banner-image", style: "height: 300px; width: 100%; object-fit: cover;") %>
-  <div class="card banner-card" style="position: relative; top: 50%; left: 30%; transform: translate(-50%, -50%); width: 50%;">
-    <div class="card-body">
-      <h3 class="card-title"><%= @flat.name %></h3>
-      <p class="card-text"><%= @flat.address %></p>
+
+  <div class="container" style="position: relative; top: -50px;">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3 class="card-title"><%= @flat.name %></h3>
+            <p class="card-text"><%= @flat.address %></p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5>A bit more about this flat</h5>
+            <p><%= @flat.description %></p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5>Details</h5>
+            <i class="fa-solid fa-people-line"></i> <%= @flat.number_of_guests %>
+            <i class="ml-4 fa-solid fa-euro-sign"></i> <%= @flat.price_per_night %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Book this place!</h5>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">From:</span>
+              </div>
+              <input type="text" class="form-control" placeholder="12/10/2024" aria-label="12/10/2024" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">To:</span>
+              </div>
+              <input type="text" class="form-control" placeholder="18/10/2024">
+            </div>
+            <a href="#" class="btn btn-success w-100">Book</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card-header p-3 mt-3" style="position: relative; top: 50%; left: 30%; transform: translate(-50%, -50%); width: 50%;">
-    <h5>A bit more about this flat</h5>
-    <p>Detailed info about the flats</p>
-  </div>
-  <div class="card-header p-3 mt-3" style="position: relative; top: 50%; left: 30%; transform: translate(-50%, -50%); width: 50%;">
-    <h5>Details</h5>
-    <i class="fa-solid fa-people-line"><%= @flat.number_of_guests %></i>
-    <i class="ml-4 fa-solid fa-euro-sign"><%= @flat.price_per_night %></i>
   </div>
 </div>
